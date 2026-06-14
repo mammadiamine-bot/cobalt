@@ -9,7 +9,7 @@ COPY . /app
 RUN corepack enable
 RUN apk add --no-cache python3 alpine-sdk
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+RUN --mount=type=cache,id=s/496a2dac-4fef-4f15-b94b-983252675e26-/pnpm/store,target=/pnpm/store \
     pnpm install --prod --frozen-lockfile
 
 RUN pnpm deploy --filter=@imput/cobalt-api --prod /prod/api
